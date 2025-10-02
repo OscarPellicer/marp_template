@@ -3,7 +3,7 @@ marp: true
 theme: a4
 paginate: true
 html: true
-footer: Marp template setup guide
+# footer: Marp template setup guide
 ---
 
 # A Marp template for academic courses
@@ -134,6 +134,8 @@ A4 Theme (`a4.css`)
 </div>
 </div>
 
+---
+
 ## Template features
 
 - **Multi-column grids**: 2 and 3 column layouts
@@ -148,8 +150,6 @@ A4 Theme (`a4.css`)
 - **Reference styling**: Professional citations
 - **Responsive design**: Adapts to different screen sizes
 - **Print optimization**: A4 theme optimized for printing
-
----
 
 ## Advanced features
 
