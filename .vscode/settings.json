@@ -1,0 +1,7 @@
+{
+    "markdown.marp.html": "all",
+    "markdown.marp.themes": [
+        ".vscode/extra.css",
+        ".vscode/a4.css"
+    ]
+}

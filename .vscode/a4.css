@@ -1,0 +1,69 @@
+/* @theme a4 */
+@import 'extra';
+
+/* --- Based on the default theme, simply adds extra layout functionality for styling A4 pages --- */
+
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800;1,400..800;1,500..800;1,700..800;1,900..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* Headings */
+h1, h2 {
+  border-bottom: 1px solid #57657f;
+}
+
+/* --- Section styling --- */
+/* Note that the flex stuff breaks the floating images, still working on it */
+section {
+  width: 210mm;
+  height: 297mm;
+  padding: 20mm;
+  box-sizing: border-box;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 9pt;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important; /* push content to top */
+  align-items: stretch !important;        /* stretch width */
+}
+
+/* Only apply text justification and word-break to non-code content */
+section > *:not(pre):not(code) {
+  text-align: justify !important;
+  word-break: break-word !important;
+  hyphens: auto !important;
+}
+
+/* Keep code blocks normal and left-aligned */
+section pre, section code {
+  text-align: left !important;
+  word-break: normal !important;
+}
+
+/* Global logos */
+section::before {
+  content: "";
+  position: absolute;
+  bottom: 10mm;
+  right: 20mm;
+  width: 490px;   /* desired width */
+  height: 50px;   /* desired height */
+  background: url("no-logo") no-repeat center/contain; /* disable logo */
+  pointer-events: none;
+}
+
+/* Global page number */
+section::after {
+  font-size: 10pt;
+  position: absolute;
+  bottom: 5mm;
+  left: 14mm;
+  color: #888;
+}
+
+/* Global footer */
+footer {
+  position: absolute;
+  font-size: 10pt;
+  color: #888;
+  bottom: 5mm;
+  left: 20mm;
+}
