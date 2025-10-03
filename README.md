@@ -69,6 +69,8 @@ By default, the `.vscode/settings.json` file is already configured for you, but 
 
 ## Creating your first slides
 
+### Starting from scratch
+
 Create a new markdown file in your repository, add the frontmatter and start writing your slides:
 
 ```markdown
@@ -95,12 +97,47 @@ footer: Your Course Name
 Your content here...
 ```
 
+### Starting from a PowerPoint presentation
+
 Alternatively, you can use my other repository https://github.com/OscarPellicer/pptx2marp to convert PowerPoint (`.pptx`) presentations to Marp slides, and start from there:
 
 ```bash
+# Optional: create a new environment
+conda create -n md python=3.10
+conda activate md
+
+# Install the libraries
 pip install -e git+https://github.com/OscarPellicer/pptx2marp.git
 pip install -e git+https://github.com/OscarPellicer/python-pptx.git
+
+# Convert the presentation
+pptx2md presentation.pptx -o outputs_path/ --marp --disable-color --min-block-size 5 --keep-similar-titles
 ```
+
+### Starting from a $\LaTeX$ presentation
+
+To convert from $\LaTeX$ to Markdown, I've using just prompting to AI models (Gemini 2.5 Pro in my case). The prompt goes like this:
+
+> I want you to help me translate some latex slides into marp. I have created a custom theme. Here are some example marp slides showcasing all the features of the theme for your reference:
+> 
+> {include `template_slides.md`}
+>
+> I will also be attaching some of the images to the input. You must try to convert them to markdown if possible (e.g. if they are tables, or code, or something simple). Do not go out of your way if the conversion is not straightforward, and just leave them as is, inserted in the markdown. Note that they will all be available with their original filenames under the folder `imgs/`
+> 
+
+---
+
+> Also, always replace the name of the teacher by my name and email: {`teacher_name`}, {`teacher_email`}, {`teacher_institution`}
+>
+> Some extra criteria:
+> 1.  **Do not use two-column design:** Avoid `<div class="columns">` entirely.
+> 2.  **Use floating images:** Replace column layouts with `![left ...]` or `![right ...]`, placing the image tag **before** the text it surrounds.
+> 3.  **Handle large tables:** If a table doesn’t fit in one slide, split it across slides; apply `<!-- _class: smallest -->` to dense tables; tables may coexist with floating images.
+> 4.  **Do not use background images:** Avoid `![bg ...]`; instead, use `![center ...]` for main central images.
+> 5.  **Scale images:** Use `w:XXXpx` or `h:XXXpx` to fit within slide dimensions (1280×720px).
+> 6.  **Convert table images to Markdown:** Any image that mainly contains a table must be transcribed into a native Markdown table.
+> 7.  **Code structure:** Do not use `<div>` for image positioning; rely on Marp’s native Markdown syntax.
+> 8.  **Avoid blockquotes unless semantically valid:** Do not use `>` unless it conveys an actual quotation or semantic block.
 
 ## Available themes
 
@@ -134,8 +171,6 @@ A4 Theme (`a4.css`)
 </div>
 </div>
 
----
-
 ## Template features
 
 - **Multi-column grids**: 2 and 3 column layouts
@@ -150,6 +185,8 @@ A4 Theme (`a4.css`)
 - **Reference styling**: Professional citations
 - **Responsive design**: Adapts to different screen sizes
 - **Print optimization**: A4 theme optimized for printing
+
+---
 
 ## Advanced features
 

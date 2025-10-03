@@ -55,11 +55,23 @@ $$
 
 ---
 
+## Centered images
+
+![center w:320px](imgs/example1.jpeg)
+
+This demonstrates centered images using the `center` attribute. You can also control the size with the `w:` parameter (or with the `h:` parameter for height): 
+
+```markdown
+![center w:400px](imgs/your-image.png)
+```
+
+---
+
 <!-- _class: small -->
 
-## Image positioning examples
+## Right and left floating images
 
-![left w:300px](imgs/example3.png)
+![left sepia:50% w:300px](imgs/example1.jpeg)
 
 This text flows around the left-aligned image. The image is positioned using the `left` attribute in the alt text, and the width is controlled with the `w:` parameter.
 
@@ -70,11 +82,41 @@ We can break the floating with the `clear` class:
 
 <div class="clear"></div>
 
-![right w:200px](imgs/example2.png)
+![right sepia:90% brightness:0.8 w:200px](imgs/example1.jpeg)
 
 Similarly, this text flows around a right-aligned image. The positioning is controlled through the alt text attributes, making it easy to create dynamic layouts without complex CSS.
 
 Notice that this slide has the `small` class (`<!-- _class: small -->`), so the text is smaller than the default.
+
+---
+
+## Background images
+
+![bg blur:10px opacity:0.6 sepia:30% brightness:0.9](imgs/example1.jpeg)
+
+This slide demonstrates a full background image using the `bg` attribute. The image covers the entire slide background. 
+
+You can also add effects to the background image, like `blur`, `opacity`, `sepia`, `brightness`, etc. For instance, the image in this slide has the following effects: 
+
+```markdown
+![bg blur:10px opacity:0.6 sepia:30% brightness:0.9](imgs/example1.jpeg)
+```
+
+---
+
+<!-- _class: no-footer -->
+
+![bg right:40% brightness:0.6](imgs/example1.jpeg)
+
+This slide shows a background image positioned to the right with 40% width using `bg right:40%` and a brightness of 0.6: `bg right:40% brightness:0.6`
+
+---
+
+<!-- _class: no-footer -->
+
+![bg left:60% sepia:50%](imgs/example1.jpeg)
+
+This slide demonstrates a background image on the left (60% width) with a sepia filter: `bg left:60% sepia:50%`
 
 ---
 
