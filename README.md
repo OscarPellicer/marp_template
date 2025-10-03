@@ -116,7 +116,7 @@ pptx2md presentation.pptx -o outputs_path/ --marp --disable-color --min-block-si
 
 ### Starting from a $\LaTeX$ presentation
 
-To convert from $\LaTeX$ to Markdown, I've using just prompting to AI models (Gemini 2.5 Pro in my case). The prompt goes like this:
+To convert from $\LaTeX$ to Markdown, I've been using just plain prompting to AI models (Gemini 2.5 Pro in my case). The prompt goes like this:
 
 > I want you to help me translate some latex slides into marp. I have created a custom theme. Here are some example marp slides showcasing all the features of the theme for your reference:
 > 
@@ -230,6 +230,6 @@ Absolute Positioning
 
 
 1. Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (Mac)
-2. Type "Marp: Export Slide Deck"
+2. Type `Marp: Export Slide Deck`
 3. Choose PDF format
 4. Select save location
