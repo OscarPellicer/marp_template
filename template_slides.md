@@ -108,7 +108,7 @@ You can also add effects to the background image, like `blur`, `opacity`, `sepia
 
 ![bg right:40% brightness:0.6](imgs/example1.jpeg)
 
-This slide shows a background image positioned to the right with 40% width using `bg right:40%` and a brightness of 0.6: `bg right:40% brightness:0.6`
+This slide shows a background image positioned to the right with 40% width and a brightness of 0.6: `bg right:40% brightness:0.6`
 
 ---
 
@@ -213,7 +213,7 @@ However, the syntax is a bit verbose, so we try to avoid it if possible.
 
 ## Code examples
 
-### Python Code Block
+### Python Code Block (note that we get syntax highlighting for free!)
 
 ```python
 from sklearn.feature_extraction.text import CountVectorizer
@@ -263,18 +263,17 @@ By default, tables are left-aligned within the slide. To center the table (or an
 
 ## Absolute positioning example
 
-<div class="abs-pos" style="right: 50px; top: 50px; width: 600px; z-index: 1;">
-  <img src="logos/uv_isp.png" alt="Positioned image" style="width: 100%; height: 100%; object-fit: cover;">        
+<div class="abs-pos" style="right: 200px; top: 300px; width: 200px; z-index: 1;">
+  <img src="imgs/example1.jpeg" alt="Positioned image" style="width: 100%; height: 100%; object-fit: cover;">        
 </div>
 
-This demonstrates absolute positioning capabilities. The image is positioned at specific coordinates (50px from right, 50px from top) with a defined width and height.
+This demonstrates absolute positioning capabilities. The image is positioned at specific coordinates (200px from right, 300px from top) with a defined width and height.
 
 **Usage Notes:**
 - Coordinates are relative to the slide
 - Default slide size is 1280x720px
 - Use z-index to control layering
-- Perfect for precise positioning
-- **Avoid using absolute positioning if possible**, use the other positioning methods (float, center) instead
+- **Avoid using absolute positioning if possible**, use the other positioning methods (float, center) instead. This is because it is not responsive, and it will break easily if any elements in the slide are modified (e.g., we change text size).
 
 ---
 
@@ -302,7 +301,7 @@ There are several classes you can use to style your slides:
 - `<!-- _class: smaller -->`: This slide uses the `smaller` class for even more compact text at 20px.
 - `<!-- _class: smallest -->`: This slide uses the `smallest` class for the smallest text at 18px.
 
-Additionally, you can use the `no-footer` class to remove the footer and logos from the slide: `<!-- _class: no-footer -->`
+Additionally, you can use the `no-footer` class to remove the footer and logos from the slide: `<!-- _class: no-footer -->`. Or combine both like this: `<!-- _class: no-footer smallest -->`.
 
 ---
 
