@@ -11,8 +11,8 @@ html: true
 This repostory contains a template for creating academic presentations using **Marp** (Markdown Presentation Ecosystem) with **VS Code**, two custom themes (`extra.css` and `a4.css`), and a guide for setting up VS Code for Marp and start using these themes. The template includes:
 
 - **Two custom themes**:
-  - `extra.css`: for presentations, see [`template_slides.md`](template_slides.md) for an example, and [`example_slides.pdf`](example_slides.pdf) for a preview.
-  - `a4.css`: for documents, see [`README.md`](README.md) (this file) for an example, and [`README.pdf`](README.pdf) for a preview.
+  - `extra.css`: for presentations, see [`template_slides.md`](template_slides.md) ([raw](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/template_slides.md)) for an example, and [`template_slides.pdf`](template_slides.pdf) for a preview.
+  - `a4.css`: for documents, see [`README.md`](README.md) ([raw](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/README.md)) (this file) for an example, and [`README.pdf`](README.pdf) for a preview.
 - **Pre-configured settings** for optimal development experience
 - **Example slides** demonstrating all available features
 - **Comprehensive documentation** for easy customization
