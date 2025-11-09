@@ -1,7 +1,17 @@
 {
-    "markdown.marp.html": "all",
-    "markdown.marp.themes": [
-        ".vscode/extra.css",
-        ".vscode/a4.css"
-    ]
+  // Automatically paste images to imgs folder
+  "markdown.editor.filePaste.copyIntoWorkspace": "mediaFiles",
+  "markdown.editor.drop.copyIntoWorkspace": "mediaFiles",
+  "markdown.copyFiles.destination": {
+    "**/*": "imgs/"
+  },
+  "editor.pasteAs.enabled": true,
+  "editor.pasteAs.preferences": ["uri.path.relative"],
+
+  // Use all HTML features in MARP
+  "markdown.marp.html": "all",
+  "markdown.marp.themes": [
+      ".vscode/extra.css",
+      ".vscode/a4.css"
+  ]
 }

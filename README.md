@@ -11,11 +11,10 @@ html: true
 This repostory contains a template for creating academic presentations using **Marp** (Markdown Presentation Ecosystem) with **VS Code**, two custom themes (`extra.css` and `a4.css`), and a guide for setting up VS Code for Marp and start using these themes. The template includes:
 
 - **Two custom themes**:
-  - `extra.css`: for presentations, see [`template_slides.md`](template_slides.md) ([raw](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/template_slides.md)) for an example, and [`template_slides.pdf`](template_slides.pdf) for a preview.
-  - `a4.css`: for documents, see [`README.md`](README.md) ([raw](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/README.md)) (this file) for an example, and [`README.pdf`](README.pdf) for a preview.
-- **Pre-configured settings** for optimal development experience
+  - `extra.css`: for presentations, see [`template_slides.md`](template_slides.md) ([raw](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/template_slides.md)) for an example, and [`template_slides.pdf`](template_slides.pdf) ([raw](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/template_slides.pdf)) for a preview.
+  - `a4.css`: for documents, see [`README.md`](README.md) ([raw](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/README.md)) (this file) for an example, and [`README.pdf`](README.pdf) ([raw](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/README.pdf)) for a preview.
+- **Pre-configured settings** for optimal development experience (improved functionality, pasting images from the clipboard, etc.)
 - **Example slides** demonstrating all available features
-- **Comprehensive documentation** for easy customization
 
 Why Marp?
 
@@ -24,7 +23,7 @@ Why Marp?
 - **Consistent styling**: Professional appearance across all slides
 - **Zero compilation time**: The preview updates instantly, unlike other tools like $\LaTeX$
 - **Extensible**: Easily add your own themes and features using HTML and CSS
-- **AI-friendly**: Easy to integrate with AI tools since it is a Markdown file
+- **AI-friendly**: Easy to integrate with AI tools since it is a Markdown file; also, you don't have to marry a specific model provider (e.g. Copilot for MS Powerpoint)
 
 ## Prerequisites
 
@@ -35,13 +34,22 @@ Before setting up this template, ensure you have installed VS Code with the foll
 
 ## Repository setup
 
+<div class="columns">
+<div>
+
 Clone the Repository and open it in VS Code
+
+</div>
+<div>
 
 ```bash
 git clone https://github.com/OscarPellicer/marp_template.git
 cd marp_template
 code .
 ```
+
+</div>
+</div>
 
 ## VS Code configuration
 
@@ -55,11 +63,21 @@ By default, the `.vscode/settings.json` file is already configured for you, but 
 
 ```json
 {
-    "markdown.marp.html": "all",
-    "markdown.marp.themes": [
-        ".vscode/extra.css",
-        ".vscode/a4.css"
-    ]
+  // Automatically paste images to imgs folder
+  "markdown.editor.filePaste.copyIntoWorkspace": "mediaFiles",
+  "markdown.editor.drop.copyIntoWorkspace": "mediaFiles",
+  "markdown.copyFiles.destination": {
+    "**/*": "imgs/"
+  },
+  "editor.pasteAs.enabled": true,
+  "editor.pasteAs.preferences": ["uri.path.relative"],
+
+  // Use all HTML features in MARP
+  "markdown.marp.html": "all",
+  "markdown.marp.themes": [
+      ".vscode/extra.css",
+      ".vscode/a4.css"
+  ]
 }
 ```
 
@@ -117,7 +135,7 @@ pptx2md presentation.pptx -o outputs_path/ --marp --disable-color --min-block-si
 
 ### Starting from a $\LaTeX$ presentation
 
-To convert from $\LaTeX$ to Markdown, I've been using just plain prompting to AI models (Gemini 2.5 Pro in my case). The prompt goes like this:
+To convert from $\LaTeX$ to Markdown, I've been using just plain prompting to AI models (Gemini 2.5 Pro in my case). The prompt goes something like this:
 
 > I want you to help me translate some latex slides into marp. I have created a custom theme. Here are some example marp slides showcasing all the features of the theme for your reference:
 > 
@@ -136,9 +154,15 @@ To convert from $\LaTeX$ to Markdown, I've been using just plain prompting to AI
 > 3.  **Handle large tables:** If a table doesn’t fit in one slide, split it across slides; apply `<!-- _class: smallest -->` to dense tables; tables may coexist with floating images.
 > 4.  **Do not use background images:** Avoid `![bg ...]`; instead, use `![center ...]` for main central images.
 > 5.  **Scale images:** Use `w:XXXpx` or `h:XXXpx` to fit within slide dimensions (1280×720px).
-> 6.  **Convert table images to Markdown:** Any image that mainly contains a table must be transcribed into a native Markdown table.
+> 6.  **Convert table images to Markdown:** Any provided image that mainly contains a table must be transcribed into a native Markdown table.
 > 7.  **Code structure:** Do not use `<div>` for image positioning; rely on Marp’s native Markdown syntax.
 > 8.  **Avoid blockquotes unless semantically valid:** Do not use `>` unless it conveys an actual quotation or semantic block.
+
+Alternatively, if your document is too long, or you don't want to use AI, you can use [pandoc](https://pandoc.org/installing.html) to convert from $\LaTeX$ to Markdown, and then manually adapt the resulting Markdown file to Marp:
+
+```bash
+pandoc -s -o output.md input.tex
+```
 
 ## Available themes
 
@@ -177,21 +201,19 @@ A4 Theme (`a4.css`)
 - **Multi-column grids**: 2 and 3 column layouts
 - **Absolute positioning**: Precise element placement
 - **Floating images**: Left, right, and center alignment
-- **Figure containers**: Professional image captions
+- **Figure containers**: Allows having floating images with captions
 - **Custom fonts**: Open Sans (presentation), Libre Baskerville (A4), etc.
-- **Text sizing**: Small, smaller, smallest classes
+- **Slide sizing**: Small, smaller, smallest classes
 - **Mathematical expressions**: LaTeX-style math support
 - **Code highlighting**: Syntax highlighting for code blocks
-- **Custom classes**: No-footer, small text, etc.
-- **Reference styling**: Professional citations
-- **Responsive design**: Adapts to different screen sizes
+- **Reference styling**: Consistent reference styling
 - **Print optimization**: A4 theme optimized for printing
 
 ---
 
 ## Advanced features
 
-Multi-Column Layouts
+### Multi-Column Layouts
 
 ```html
 <div class="columns">

@@ -131,9 +131,13 @@ This slide demonstrates a background image on the left (60% width) with a sepia 
 *   First column content
 *   Can contain any element
 
-**Important notes:**
-- When using any html code within the markdown file, **always** remember to leave a blank line before and after the html code, otherwise the markdown will not be rendered correctly. 
-- Also remember to close all the `<div>` tags that you open, like this: `</div>`.
+<div class="warning box">
+
+  **Important notes:**
+  - When using any html code within the markdown file, **always** remember to leave a blank line before and after the html code, otherwise the markdown will not be rendered correctly. 
+  - Also remember to close all the `<div>` tags that you open, like this: `</div>`.
+  
+</div>
 
 </div>
 <div>
@@ -192,20 +196,39 @@ This slide demonstrates a background image on the left (60% width) with a sepia 
 </div>
 </div>
 
+We can also adjust the background color of the slides very easily:
+
+```markdown
+<!-- _backgroundColor: "lightgreen" -->
+<!-- _backgroundColor: "rgb(199, 255, 213)" -->
+```
+
+<!-- _backgroundColor: "rgb(199, 255, 213)" -->
+
 ---
+
+<!-- _backgroundImage: "linear-gradient(135deg, #667eea 0%, #764ba2 40%,rgb(37, 21, 92) 100%)" -->
+<!-- _color: white -->
 
 ## Figure containers with captions
 
-<div class="figure-container align-right" style="width: 300px;">
-  <img src="imgs/example1.jpeg" alt="Workflow diagram" width="300">
+<div class="figure-container align-right" style="width: 250px;">
+  <img src="imgs/example1.jpeg" alt="Workflow diagram" width="auto" height="auto">
   <p class="figcaption">This is a right-aligned figure with a caption.</p>
 </div>
 
-This demonstrates how to create professional figures with captions. The figure container allows for precise positioning and styling of images with descriptive text.
+The figure container allows having floating images with captions.
 
-The text flows naturally around the figure, creating a clean, academic presentation style that's perfect for technical courses.
+The text flows naturally around the figure + caption, creating a clean, academic presentation style. 
 
-However, the syntax is a bit verbose, so we try to avoid it if possible.
+However, the syntax is a bit verbose, so **we try to avoid it if possible**.
+
+## Fancy background gradients
+
+```markdown
+<!-- _backgroundImage: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" -->
+<!-- _color: white -->
+```
 
 ---
 
@@ -213,7 +236,7 @@ However, the syntax is a bit verbose, so we try to avoid it if possible.
 
 ## Code examples
 
-### Python Code Block (note that we get syntax highlighting for free!)
+### Python code block (note that we get syntax highlighting for free!)
 
 ```python
 from sklearn.feature_extraction.text import CountVectorizer
@@ -285,7 +308,7 @@ The reference class provides consistent styling for citations and references thr
 
 <div class="reference">
 
-[Natural Language Processing with Python](https://www.nltk.org/book/) - Bird, Klein & Loper
+Natural Language Processing with Python, [https://www.nltk.org/book/](https://www.nltk.org/book/) - Bird, Klein & Loper
 
 </div>
 
@@ -327,4 +350,125 @@ Where:
 - $\text{IDF}(t) = \log\frac{N}{df(t)}$ is the inverse document frequency
 
 </div>
+</div>
+
+
+---
+
+## Boxes
+
+Info box
+
+<div class="info box">
+
+This is an info box. It is used to display important information.
+
+</div>
+
+Warning box
+
+<div class="warning box">
+
+This is a warning box. It is used to display warning information.
+
+</div>
+
+Error box
+
+<div class="error box">
+
+This is an error box. It is used to display error information.
+
+</div>
+
+---
+
+<!-- _class: smaller -->
+
+## Importing material into MARP
+
+### Importing images in clipboard (from screenshots, from the web, etc.)
+
+Simply `Ctrl+V` to insert the image into Markdown! To configure the path where the image will be saved, you must edit the `settings.json` file in the `.vscode` folder.
+
+### Importing general content from the web
+
+For webpages, you can simply copy stuff from the web and paste it into this webpage to convert it to Markdown: [https://euangoddard.github.io/clipboard2markdown/](https://euangoddard.github.io/clipboard2markdown/)
+
+For better results, consider using the following Chrome extensions:
+- For general webpages: [WebInk](https://chromewebstore.google.com/detail/webink-intelligent-web-to/lhifbnmampdmdadbhpeeoikkljhiaohn)
+- For ChatGPT in paritcular (with support for equations): [ChatGPT to Markdown Pro Converter](https://chromewebstore.google.com/detail/chatgpt-to-markdown-pro-c/adghjpdmpbcmppeafpodcjpagmegdpci)
+
+### Other tools
+
+To remove the background of an image, you can use the following tool: [https://www.iloveimg.com/remove-background](https://www.iloveimg.com/remove-background)
+
+---
+
+<!-- _class: small gradient-background -->
+
+## Be as fancy as you want with HTML + CSS ❤️
+
+You can embed any HTML and CSS you want. This allows for creating complex and visually appealing slides that go beyond standard Markdown capabilities. 
+
+Instead of the defining a gobal `<style>` tag, you can define a `<style scoped>` tag to make the CSS local to the slide. Here are a few examples:
+
+<style scoped>
+/* Scoped styles for this slide */
+ {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+ h2, h3, h4, p {
+    color: white !important;
+}
+
+h2 {
+  background: linear-gradient(90deg,rgb(167, 0, 170) 0%, rgb(42, 0, 194) 40%, rgb(0, 67, 100) 100%);
+  border-bottom: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+ .feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+ .feature-card {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    width: 45%;
+    text-align: left;
+}
+
+ .feature-card h4 {
+  margin-top: 0;
+}
+</style>
+
+<div class="feature-grid">
+  <div class="feature-card">
+    <h4>Modular Design</h4>
+    <p>Component-based architecture.</p>
+  </div>
+  <div class="feature-card">
+    <h4>High Performance</h4>
+    <p>Optimized for low-latency.</p>
+  </div>
+  <div class="feature-card">
+    <h4>Secure by Default</h4>
+    <p>Built-in security features.</p>
+  </div>
+  <div class="feature-card">
+    <h4>Fully Responsive</h4>
+    <p>Adapts to any screen size.</p>
+  </div>
 </div>
