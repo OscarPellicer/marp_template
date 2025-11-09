@@ -16,9 +16,9 @@ This repostory contains a template for creating academic presentations using **M
 The template includes:
 
 - **Two custom themes**:
-  - `extra.css`: for presentations, see [`template_slides.md`](template_slides.md) ([raw](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/template_slides.md)) for an example, and [`template_slides.pdf`](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/template_slides.pdf) for a preview.
-  - `a4.css`: for documents, see [`README.md`](README.md) ([raw](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/README.md)) (this file) for an example, and [`README.pdf`](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/README.pdf) for a preview.
-- **Pre-configured settings** for optimal development experience (improved functionality, pasting images from the clipboard, etc.)
+  - `.vscode/extra.css`: for presentation slides, see [`template_slides.md`](template_slides.md) ([raw](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/template_slides.md)) for example slides, and [`template_slides.pdf`](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/template_slides.pdf) for the final exported PDF.
+  - `.vscode/a4.css`: for A4 documents, see [`README.md`](README.md) ([raw](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/README.md)) (this file) for an example, and [`README.pdf`](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/README.pdf) for a preview.
+- **Pre-configured settings** for optimal development experience (improved functionality, pasting images from the clipboard, etc.), available in the `.vscode/settings.json` file.
 - **Example slides** demonstrating all available features
 
 Why Marp?
@@ -187,6 +187,12 @@ A4 Theme (`a4.css`)
 </div>
 </div>
 
+<div class="warning box">
+
+Note that current limitations of the A4 theme is that it does not support floating images, and also you must manually define the page breaks (using `---`).
+
+</div>
+
 ## Template features
 
 - **Multi-column grids**: 2 and 3 column layouts
@@ -247,7 +253,7 @@ Absolute Positioning
 3. Choose PDF format
 4. Select save location
 
-## Compressing the images in the exported PDF
+### Compressing the images in the exported PDF
 
 Note that the images will be exported into the PDF as is. If they are huge in size, the size of the final PDF will be unnecessarily large. If you want to compress the quality of images in the exported PDF, you can use websites such as [SmallPDF](https://smallpdf.com/pdf-compressor) or [ILovePDF](https://www.ilovepdf.com/compress_pdf).
 
