@@ -3,7 +3,7 @@ marp: true
 theme: extra
 paginate: true
 html: true
-footer: Template slides - Marp features demo
+footer: Marp template slides demo
 ---
 
 <!-- Course logo override -->
@@ -12,15 +12,20 @@ footer: Template slides - Marp features demo
 <!-- Course font override -->
 <style> section { font-family: 'Open Sans', sans-serif; } </style>
 
+<!-- Define a fancy background gradient and text color -->
+<!-- _backgroundImage: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)" -->
+<!-- _color: white -->
+
+<!-- Use smaller text than usual for the slide, and remove the footer -->
 <!-- _class: small no-footer -->
 
 ![center](logos/uv_etse_isp.png)
 
 <br>
 
-![left w:450px](imgs/example1.jpeg)
+![left brightness:0.9 w:420px](imgs/example1.jpeg)
 
-# Template slides: Marp features demo
+# Marp template slides demo
 
 ### Course Name
 
@@ -30,7 +35,7 @@ Oscar José Pellicer Valero
 Departament d'Enginyeria Electrònica
 Escola Tècnica Superior d'Enginyeria
 
-*This template demonstrates all the features available in the `extra.css` theme*
+*This template demonstrates all the features available in Marp + the `extra.css` theme*
 
 ---
 

@@ -49,11 +49,14 @@ footer {
   bottom: 9px;
 }
 
-/* Remove footer on no-footer slides */
-/* Note that this only removes the logos, not the actual footer.
-I'm still working on removing both */
+/* Remove footer and logos on no-footer slides */
+section.no-footer footer {
+  display: none;
+}
+
 section.no-footer::before,
 section.no-footer::after {
+  display: none !important;
   content: none !important;
   background: none !important;
   width: 0 !important;

@@ -8,11 +8,16 @@ html: true
 
 # A Marp template for academic courses
 
-This repostory contains a template for creating academic presentations using **Marp** (Markdown Presentation Ecosystem) with **VS Code**, two custom themes (`extra.css` and `a4.css`), and a guide for setting up VS Code for Marp and start using these themes. The template includes:
+This repostory contains a template for creating academic presentations using **Marp** (Markdown Presentation Ecosystem) with **VS Code**, two custom themes (`extra.css` and `a4.css`), and a guide for setting up VS Code for Marp and start using these themes. 
+
+![center](imgs/editor.png)
+> How your VS Code should look like when using Marp with this template
+
+The template includes:
 
 - **Two custom themes**:
-  - `extra.css`: for presentations, see [`template_slides.md`](template_slides.md) ([raw](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/template_slides.md)) for an example, and [`template_slides.pdf`](template_slides.pdf) ([raw](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/template_slides.pdf)) for a preview.
-  - `a4.css`: for documents, see [`README.md`](README.md) ([raw](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/README.md)) (this file) for an example, and [`README.pdf`](README.pdf) ([raw](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/README.pdf)) for a preview.
+  - `extra.css`: for presentations, see [`template_slides.md`](template_slides.md) ([raw](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/template_slides.md)) for an example, and [`template_slides.pdf`](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/template_slides.pdf) for a preview.
+  - `a4.css`: for documents, see [`README.md`](README.md) ([raw](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/README.md)) (this file) for an example, and [`README.pdf`](https://raw.githubusercontent.com/OscarPellicer/marp_template/main/README.pdf) for a preview.
 - **Pre-configured settings** for optimal development experience (improved functionality, pasting images from the clipboard, etc.)
 - **Example slides** demonstrating all available features
 
@@ -25,6 +30,8 @@ Why Marp?
 - **Extensible**: Easily add your own themes and features using HTML and CSS
 - **AI-friendly**: Easy to integrate with AI tools since it is a Markdown file; also, you don't have to marry a specific model provider (e.g. Copilot for MS Powerpoint)
 
+---
+
 ## Prerequisites
 
 Before setting up this template, ensure you have installed VS Code with the following extensions:
@@ -34,13 +41,7 @@ Before setting up this template, ensure you have installed VS Code with the foll
 
 ## Repository setup
 
-<div class="columns">
-<div>
-
 Clone the Repository and open it in VS Code
-
-</div>
-<div>
 
 ```bash
 git clone https://github.com/OscarPellicer/marp_template.git
@@ -48,18 +49,9 @@ cd marp_template
 code .
 ```
 
-</div>
-</div>
-
 ## VS Code configuration
 
-<div class="columns">
-<div>
-
 By default, the `.vscode/settings.json` file is already configured for you, but in case it is not working or you want to modify it, you can do so by opening the settings file (`Ctrl+Shift+P` $\rightarrow$ `Preferences: Open User Settings (JSON)`).
-
-</div>
-<div>
 
 ```json
 {
@@ -81,8 +73,11 @@ By default, the `.vscode/settings.json` file is already configured for you, but 
 }
 ```
 
-</div>
-</div>
+## Side-by-side preview in VS Code
+
+To view the side-by-side preview of the slides, you can click on the following button on the top right corner of the editor, or press `Ctrl+Shift+V` (Windows/Linux) or `Cmd+Shift+V` (Mac) and move the new tab to the right of the editor:
+
+![center](imgs/show_preview.png)
 
 ---
 
@@ -90,7 +85,7 @@ By default, the `.vscode/settings.json` file is already configured for you, but 
 
 ### Starting from scratch
 
-Create a new markdown file in your repository, add the frontmatter and start writing your slides:
+Create a new markdown file (e.g. `slides.md`) in your repository, add the frontmatter and start writing your slides:
 
 ```markdown
 ---
@@ -173,12 +168,10 @@ pandoc -s -o output.md input.tex
 
 Extra Theme (`extra.css`)
 - **Purpose**: Presentation slides
-- **Features**: 
-  - Multi-column layouts
+- **Key features**:
   - Image positioning
-  - Custom fonts
-  - Professional styling
-- **Best for**: Course presentations, lectures
+  - Multi-column layouts
+- **Best for**: Course slides, lectures
 
 </div>
 <div>
@@ -186,12 +179,10 @@ Extra Theme (`extra.css`)
 
 A4 Theme (`a4.css`)
 - **Purpose**: Document-style pages
-- **Features**:
+- **Key features**:
   - A4 page size (210mm × 297mm)
   - Justified text
-  - Academic formatting
-  - Print-friendly layout
-- **Best for**: Handouts, documentation, reports
+- **Best for**: Documentation, reports, exercises
 
 </div>
 </div>
@@ -251,8 +242,13 @@ Absolute Positioning
 
 ## Exporting to PDF
 
-
 1. Press `Ctrl+Shift+P` (Windows/Linux) or `Cmd+Shift+P` (Mac)
 2. Type `Marp: Export Slide Deck`
 3. Choose PDF format
 4. Select save location
+
+## Compressing the images in the exported PDF
+
+Note that the images will be exported into the PDF as is. If they are huge in size, the size of the final PDF will be unnecessarily large. If you want to compress the quality of images in the exported PDF, you can use websites such as [SmallPDF](https://smallpdf.com/pdf-compressor) or [ILovePDF](https://www.ilovepdf.com/compress_pdf).
+
+Alternatively, you can use command line tools such as [ImageMagick](https://imagemagick.org/index.php) to compress all the images in a folder, hence compressing their size before exporting.
