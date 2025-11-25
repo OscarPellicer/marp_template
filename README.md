@@ -41,11 +41,23 @@ Before setting up this template, ensure you have installed VS Code with the foll
 
 ## Repository setup
 
-Clone the Repository and open it in VS Code
+Clone the Repository, restart the Git history, and open it in VS Code
 
 ```bash
-git clone https://github.com/OscarPellicer/marp_template.git
-cd marp_template
+# Clone the repo
+git clone https://github.com/OscarPellicer/marp_template.git my_course_name
+cd my_course_name
+
+# Remove the entire Git history
+rm -rf .git
+
+# Re-initialize as a brand-new repo
+git init
+
+# (Optional) add everything and commit as a fresh start
+git add .
+git commit -m "Initial commit"
+
 code .
 ```
 

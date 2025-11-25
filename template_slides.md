@@ -109,7 +109,7 @@ You can also add effects to the background image, like `blur`, `opacity`, `sepia
 
 ---
 
-<!-- _class: no-footer -->
+<!-- _class: small no-footer -->
 
 ![bg right:40% brightness:0.6](imgs/example1.jpeg)
 
@@ -208,7 +208,7 @@ We can also adjust the background color of the slides very easily:
 <!-- _backgroundColor: "rgb(199, 255, 213)" -->
 ```
 
-<!-- _backgroundColor: "rgb(199, 255, 213)" -->
+<!-- _backgroundColor: "rgb(154, 196, 164)" -->
 
 ---
 
